@@ -18,6 +18,7 @@ gem 'twitter-bootstrap-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'flipclockjs-rails'
+gem 'erb2haml'
 
 group :test do
 end
