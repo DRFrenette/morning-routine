@@ -1,9 +1,25 @@
-= form_for :session, url: session_path do |form|
-  %div
-    = form.label :email
-    = form.email_field :email
-  %div
-    = form.label :password
-    = form.password_field :password
-  %div
-    = form.submit "Sign in"
+.page-md.login
+  .content
+    = simple_form_for :session, url: session_path do |f|
+      %h3.form-title Login to your account
+      .col-md-2
+        .alert.alert-info.display-hide
+          %button.close{"data-close" => "alert"}
+          %span
+            Enter any username and password.
+        .form-group
+          %label.control-label.visible-ie8.visible-ie9 Email
+          .input-group
+            %span.input-group-addon
+              %i.fa.fa-envelope
+            = f.email_field :email, placeholder: 'Email', 
+              class: 'form-control'
+        .form-group
+          %label.control-label.visible-ie8.visible-ie9 Password
+          .input-group
+            %span.input-group-addon
+              %i.fa.fa-lock
+            = f.password_field :password, placeholder: 'Password', 
+              class: 'form-control placeholder-no-fix'
+          %br
+          = f.submit "Sign in", class: "btn btn-primary"
