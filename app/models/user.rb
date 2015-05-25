@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :age, presence: true
+
+  def increment_sign_in_count
+    increment! :sign_in_count
+  end
 end

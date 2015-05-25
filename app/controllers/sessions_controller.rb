@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     user = authenticate_session(session_params)
 
     if sign_in(user)
+      user.increment_sign_in_count
       redirect_to root_path
     else
       render :new
