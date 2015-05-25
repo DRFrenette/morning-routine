@@ -1,15 +1,50 @@
-= form_for @user do |form|
-  - if @user.errors.any?
-    = pluralize(@user.errors.count, "error")
-    prevented your account from being created:
-    %ul
-      - @user.errors.full_messages.each do |error_message|
-        %li= error_message
-  %div
-    = form.label :email
-    = form.email_field :email
-  %div
-    = form.label :password
-    = form.password_field :password
-  %div
-    = form.submit "Sign up"
+.page-md
+  .content
+    .col-md-2
+      = simple_form_for @user do |f|
+        - if @user.errors.any?
+          = pluralize(@user.errors.count, "error")
+          prevented your account from being created:
+          %ul
+            - @user.errors.full_messages.each do |error_message|
+              %li.alert.alert-danger.display-hide=error_message
+        %h3.form-title
+          Login to your account
+          %br
+          .form-group
+            %label.control-label.visible-ie8.visible-ie9 Email
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-envelope
+              = f.email_field :email, placeholder: 'Email', 
+                class: 'form-control placeholder-no-fix', label: false
+          .form-group
+            %label.control-label.visible-ie8.visible-ie9 Password
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-lock
+              = f.password_field :password, placeholder: 'Password',
+                class: 'form-control placeholder-no-fix', label: false
+          .form-group
+            %label.control-label.visible-ie8.visible-ie9 First Name
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-user
+              = f.input :first_name, placeholder: 'Enter your first name',
+                class: 'form-control placeholder-no-fix', label: false
+          .form-group
+            %label.control-label.visible-ie8.visible-ie9 Last Name
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-user
+              = f.input :last_name, placeholder: 'Enter your last name',
+                class: 'form-control placeholder-no-fix', label: false
+          .form-group
+            %label.control-label.visible-ie8.visible-ie9 Age
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-calendar
+              = f.input :age, collection: 18..65,
+                class: 'form-control placeholder-no-fix', label: false
+            %br
+            = f.submit "Sign Up", class: "btn btn-primary"
