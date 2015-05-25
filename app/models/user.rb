@@ -3,5 +3,5 @@ class User < ActiveRecord::Base
   validates :password_digest, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :birthday, presence: true
+  validates :age, presence: true
 end
