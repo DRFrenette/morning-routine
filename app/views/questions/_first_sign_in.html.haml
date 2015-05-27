@@ -1,0 +1,22 @@
+.alert.alert-block.alert-success.fade.in
+  %button.close{"data-dismiss" => "alert", type: "button"}
+  %h4.alert-heading Welcome to morning routine!
+  %p
+    Hey #{@user.first_name}, it's good to meet you! This is a webapp designed to help you create an awesome morning routine to help you get the most out of your day. The first thing you'll do is set up a few empowering questions to get you access to amazing states of mind. Don't worry if you're not sure what those questions might be, I've got a few resources that'll help you create them. 
+  %p
+    %button.btn.green{"data-target" => "#questionsModal", "data-toggle" => "modal", type: "button"}
+      Get started
+
+#questionsModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "questionsLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+        %h4#questionsLabel.modal-title Getting Started
+      .modal-body
+        %iframe{allowfullscreen: true, frameborder: "0", height: "315", src: "https://www.youtube.com/embed/Yr7Wkz7W7Vs", width: "420"}
+      .modal-footer
+        = link_to "Let's create some questions!", new_user_question_path(@user),
+          class: "btn btn-primary"
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
