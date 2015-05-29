@@ -17,6 +17,6 @@
       .modal-body
         %iframe{allowfullscreen: true, frameborder: "0", height: "315", src: "https://www.youtube.com/embed/Yr7Wkz7W7Vs", width: "420"}
       .modal-footer
-        = link_to "Let's create some questions!", new_user_question_path(@user),
+        = link_to "Let's create some questions!", questions_path,
           class: "btn btn-primary"
         %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close

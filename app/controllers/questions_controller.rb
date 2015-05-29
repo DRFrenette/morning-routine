@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
-  def new
-    @user = current_user
-    if @user.can_create_questions?
+  def index
+    if current_user.can_create_questions?
       @question = Question.new
       @questions = current_user.questions
     else
@@ -12,18 +11,14 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = current_user.questions.new(question_params)
-    if question.save
-      render question
-    else
-      redirect_to :back
-      flash[:notice] = "There was an error saving your question"
-    end
+    @question = current_user.questions.new(question_params)
+
+    render @question
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:body, :user_id)
+    params.require(:question).permit(:body)
   end
 end
