@@ -4,3 +4,5 @@
       %h1 Welcome back, #{@user.first_name}
       = render "questions/first_sign_in"
 
+      = link_to "Journal", user_journals_path(@user), class: "btn btn-primary"
+
