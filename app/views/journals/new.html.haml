@@ -1,0 +1,13 @@
+.metrics
+  %span.word-count 0
+
+.close
+  = link_to user_journals_path(@user) do 
+    .fa.fa-times
+
+.save-quit.hidden.pull-right.mtl
+  %span Save and Quit
+
+= form_for [@user, @journal], html: { class: "writing-area" } do |form|
+  = form.text_field :title, placeholder: "Title this entry", html: { class: "title-input" }
+  = form.text_area :body, placeholder: "Start writing here", html: { autofocus: "autofocus" }

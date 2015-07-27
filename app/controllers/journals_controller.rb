@@ -12,6 +12,7 @@ class JournalsController < ApplicationController
       flash[:notice] = "Nice! Your journal has been successfully logged. Check out the table to view it!"
     else
       redirect_to user_journals_path
+      flash[:notice] = "Whoops! Looks like there was an issue logging your journal. Shoot me an eamil through the contact page to get it sorted out."
     end
   end
 

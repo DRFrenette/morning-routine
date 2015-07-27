@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require amcharts
+//= require journal-writing-area
 //= require twitter/bootstrap
 //= require_tree .
