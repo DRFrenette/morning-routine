@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require amcharts
 //= require twitter/bootstrap
 //= require_tree .
