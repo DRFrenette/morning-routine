@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates :age, presence: true
 
   has_many :questions
+  has_many :journals
 
   def increment_sign_in_count
     increment! :sign_in_count
