@@ -17,6 +17,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter-bootstrap-rails'
 gem 'font-awesome-rails'
+gem 'jquery-datatables-rails'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'flipclockjs-rails'

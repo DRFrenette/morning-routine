@@ -14,7 +14,7 @@ function setWordCount() {
 $(function() {
   $("textarea").on('input', setWordCount)
 
-  $(".close").click(function() {
+  $("#save").click(function() {
     $(".writing-area").submit();
     return false;
   });

@@ -1,0 +1,36 @@
+.page-content
+  .container
+    .page-title
+      %h1 #{@user.first_name}'s Journals
+
+      = link_to new_user_journal_path(@user), class: "btn btn-primary btn-lg mal" do
+        New Journal
+        .fa.fa-plus
+
+      %table#journal-table.table.table-striped.table-bordered.table-hover
+        %thead
+          %tr
+            %th
+              Title
+            %th
+              Preview
+            %th
+              Date Written
+            %th
+              Word Count
+        %tbody
+          - @journals.each do |journal|
+            %tr[journal]
+              %td
+                = journal.title
+              %td
+                = journal.preview
+              %td
+                = journal.date_written
+              %td
+                = journal.word_count
+
+:javascript
+  $("#journal-table").dataTable({
+    "dom": '<"top"i><"dt-filter"f>t<"bottom"><"dt-select"l><"dt-pagination"p>'
+  });
