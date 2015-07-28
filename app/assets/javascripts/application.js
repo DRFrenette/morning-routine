@@ -16,6 +16,9 @@
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
 //= require dataTables/jquery.dataTables
 //= require amcharts
+//= require serial
 //= require journal-writing-area
 //= require twitter/bootstrap
+//= require morning_routine
+//= require_tree ./views
 //= require_tree .
