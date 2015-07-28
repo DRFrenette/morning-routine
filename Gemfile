@@ -22,6 +22,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'flipclockjs-rails'
 gem 'erb2haml'
+gem 'simple_stats'
 
 group :test do
 end
