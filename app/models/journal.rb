@@ -4,7 +4,7 @@ class Journal < ActiveRecord::Base
   belongs_to :user
 
   def word_count
-    self.body.length
+    self.body.split(" ").length
   end
 
   def preview

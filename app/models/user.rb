@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  include GraphHelper
   validates :email, presence: true, uniqueness: true
   validates :password_digest, presence: true
   validates :first_name, presence: true

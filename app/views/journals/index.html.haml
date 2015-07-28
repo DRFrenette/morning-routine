@@ -7,6 +7,8 @@
         New Journal
         .fa.fa-plus
 
+      #journal-graph{:style => "width: 100%; height: 400px; background-color: #FFFFFF;"}
+
       %table#journal-table.table.table-striped.table-bordered.table-hover
         %thead
           %tr
@@ -34,3 +36,5 @@
   $("#journal-table").dataTable({
     "dom": '<"top"i><"dt-filter"f>t<"bottom"><"dt-select"l><"dt-pagination"p>'
   });
+
+  var journalGraph = new MorningRoutine.Views.Modules.DateSeriesDay('#journal-graph', #{@user.daily_journal_graph_data.to_json});
