@@ -1,7 +1,6 @@
 MorningRoutine.Views.Modules.DateSeriesDay = function(el, graphData) {
   this.$el = $(el);
   this.id = this.$el[0].id;
-  this.legendData = legendData;
   this.graphData = graphData;
   this.graph = AmCharts.makeChart(this.id,
       {
