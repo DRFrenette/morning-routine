@@ -4,6 +4,7 @@ gem 'rails', '4.2.1'
 gem 'pg'
 gem 'puma'
 
+gem 'pry'
 gem 'haml-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'font-awesome-rails'
