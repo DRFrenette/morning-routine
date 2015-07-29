@@ -20,6 +20,8 @@
               Date Written
             %th
               Word Count
+            %th
+              Download
         %tbody
           - @journals.each do |journal|
             %tr[journal]
@@ -31,6 +33,9 @@
                 = journal.date_written
               %td
                 = journal.word_count
+              %td
+                = link_to "Download", download_path(id: journal.id)
+
 
 :javascript
   $("#journal-table").dataTable({
