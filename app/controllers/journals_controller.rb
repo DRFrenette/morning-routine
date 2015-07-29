@@ -21,6 +21,11 @@ class JournalsController < ApplicationController
     @journals = @user.journals
   end
 
+  def download
+    journal = Journal.find(params[:id])
+    send_data journal.body, filename: "#{journal.title}, #{journal.date_written}"
+  end
+
   private
 
   def load_user_from_url
