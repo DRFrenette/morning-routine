@@ -45,7 +45,7 @@
             .input-group
               %span.input-group-addon
                 %i.fa.fa-calendar
-              = f.input :age, collection: 18..65,
+              = f.input :age, placeholder: 'Enter your age',
                 class: 'form-control placeholder-no-fix', label: false
             %br
             = f.submit "Sign Up", class: "btn btn-primary"
