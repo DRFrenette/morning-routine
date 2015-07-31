@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resource :session, only: [:new, :create, :destroy]
+  devise_for :users
   resources :users, only: [:new, :create, :show] do
     resources :journals, except: [:destroy]
   end
