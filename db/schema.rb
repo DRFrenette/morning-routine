@@ -36,14 +36,14 @@ ActiveRecord::Schema.define(version: 20150727020340) do
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                       null: false
-    t.string   "password_digest",             null: false
-    t.string   "first_name",                  null: false
-    t.string   "last_name",                   null: false
-    t.integer  "age",                         null: false
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "sign_in_count",   default: 0
+    t.string   "email",                     null: false
+    t.string   "password",                  null: false
+    t.string   "first_name",                null: false
+    t.string   "last_name",                 null: false
+    t.integer  "age",                       null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "sign_in_count", default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
