@@ -11,4 +11,5 @@ class User < ActiveRecord::Base
   validates :age, presence: true
 
   has_many :journals
+  has_many :meditations
 end

@@ -2,7 +2,8 @@
   .container
     .page-title
       %h1 Welcome back, #{@user.first_name}
-      = render "questions/first_sign_in"
+      - if @user.sign_in_count == 1
+        = render "questions/first_sign_in"
 
       = link_to "Journal", user_journals_path(@user), class: "btn btn-primary"
-
+      = link_to "Meditation", user_meditations_path(@user), class: "btn btn-primary"
