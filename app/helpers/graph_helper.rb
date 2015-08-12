@@ -10,4 +10,7 @@ module GraphHelper
     end
     data
   end
+
+  def daily_meditation_graph_data
+  end
 end

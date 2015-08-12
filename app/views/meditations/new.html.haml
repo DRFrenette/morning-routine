@@ -1,0 +1,30 @@
+= form_for [@user, @meditation] do |form|
+  = form.number_field :start_time
+  = form.number_field :end_time
+  = form.submit class: "btn btn-primary"
+
+.clock.mtl
+
+  = link_to "End the Session", user_meditations_path(@user),
+    class: "btn btn-danger end-session"
+
+:javascript
+
+  form = $("#new_meditaiton")
+  startTime = $("#meditation_start_time");
+  endTime = $("#meditation_end_time");
+  button = $(".end-session");
+  timerTime = $("#timer-time");
+
+  var clock = $(".clock").FlipClock(30, {
+    countdown: true
+  });
+
+  var time = parseInt(clock.getTime());
+  startTime.val(time + 1);
+
+  button.click(function() {
+    endTime.val(clock.getTime())
+    form.submit;
+    return false;
+  });

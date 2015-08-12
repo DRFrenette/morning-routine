@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20150805011445) do
 
   create_table "meditations", force: :cascade do |t|
     t.integer  "user_id",    null: false
-    t.datetime "start_time", null: false
-    t.datetime "end_time",   null: false
+    t.integer  "start_time", null: false
+    t.integer  "end_time",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

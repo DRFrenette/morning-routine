@@ -1,0 +1,34 @@
+.page-content
+  .container
+    .page-title
+      %h1 #{@user.first_name}'s Journals
+
+      = link_to new_user_meditation_path(@user), class: "btn btn-primary btn-lg mal" do
+        New Meditation
+        .fa.fa-plus
+
+    - if @meditations.present?
+      #meditation-graph{:style => "width: 100%; height: 400px; background-color: #FFFFFF;"}
+
+      %table#meditation-table.table.table-striped.table-bordered.table-hover
+        %thead
+          %tr
+            %th
+              Date
+            %th
+              Duration (in minutes)
+        %tbody
+          - @meditations.each do |meditation|
+            %tr[meditation]
+              %td
+                = meditation.table_date
+              %td
+                = meditation.duration
+
+
+:javascript
+  $("#meditation-table").dataTable({
+    "dom": '<"top"i><"dt-filter"f>t<"bottom"><"dt-select"l><"dt-pagination"p>'
+  });
+
+  var meditationGraph = new MorningRoutine.Views.Modules.DateSeriesDay('#meditation-graph', #{@user.daily_meditation_graph_data.to_json});

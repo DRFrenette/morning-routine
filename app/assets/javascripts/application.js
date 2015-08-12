@@ -19,6 +19,9 @@
 //= require serial
 //= require journal-writing-area
 //= require twitter/bootstrap
+//= require flipclock.min
+
 //= require morning_routine
+
 //= require_tree ./views
 //= require_tree .
