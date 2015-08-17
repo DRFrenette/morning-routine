@@ -1,7 +1,7 @@
 .page-content
   .container
     .page-title
-      %h1 #{@user.first_name}'s Journals
+      %h1 #{@user.first_name}'s Meditations
 
       = link_to new_user_meditation_path(@user), class: "btn btn-primary btn-lg mal" do
         New Meditation
@@ -23,7 +23,7 @@
               %td
                 = meditation.table_date
               %td
-                = meditation.duration
+                = "#{meditation.duration[:minutes]} minutes and #{meditation.duration[:seconds]} seconds"
 
 
 :javascript
@@ -31,4 +31,4 @@
     "dom": '<"top"i><"dt-filter"f>t<"bottom"><"dt-select"l><"dt-pagination"p>'
   });
 
-  var meditationGraph = new MorningRoutine.Views.Modules.DateSeriesDay('#meditation-graph', #{@user.daily_meditation_graph_data.to_json});
+  var meditationGraph = new MorningRoutine.Views.Modules.DateSeriesDay('#meditation-graph', #{@user.daily_meditation_graph_data.to_json}, #{@user.daily_meditation_graph_titles.to_json});

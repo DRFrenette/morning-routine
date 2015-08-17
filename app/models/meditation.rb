@@ -13,6 +13,6 @@ class Meditation < ActiveRecord::Base
   def duration
     minutes = (start_time - end_time) / 60
     seconds = (start_time - end_time) % 60
-    "#{minutes} minutes and #{seconds} seconds"
+    {minutes: minutes, seconds: seconds}
   end
 end

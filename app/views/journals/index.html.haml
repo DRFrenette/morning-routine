@@ -43,4 +43,4 @@
     "dom": '<"top"i><"dt-filter"f>t<"bottom"><"dt-select"l><"dt-pagination"p>'
   });
 
-  var journalGraph = new MorningRoutine.Views.Modules.DateSeriesDay('#journal-graph', #{@user.daily_journal_graph_data.to_json});
+  var journalGraph = new MorningRoutine.Views.Modules.DateSeriesDay('#journal-graph', #{@user.daily_journal_graph_data.to_json}, #{@user.daily_journal_graph_titles.to_json});

@@ -1,4 +1,4 @@
-MorningRoutine.Views.Modules.DateSeriesDay = function(el, graphData) {
+MorningRoutine.Views.Modules.DateSeriesDay = function(el, graphData, titleData) {
   this.$el = $(el);
   this.id = this.$el[0].id;
   this.graphData = graphData;
@@ -18,7 +18,7 @@ MorningRoutine.Views.Modules.DateSeriesDay = function(el, graphData) {
         {
           "bullet": "round",
           "id": "AmGraph-1",
-          "title": "Word Count",
+          "title": titleData["legend"],
           "valueField": "column-1"
         }
         ],
@@ -26,7 +26,7 @@ MorningRoutine.Views.Modules.DateSeriesDay = function(el, graphData) {
         "valueAxes": [
         {
           "id": "ValueAxis-1",
-          "title": "Axis title"
+          "title": titleData["axis_title"]
         }
         ],
         "allLabels": [],
@@ -36,9 +36,9 @@ MorningRoutine.Views.Modules.DateSeriesDay = function(el, graphData) {
         },
         "titles": [
         {
-          "id": "journal-graph-title",
+          "id": titleData["id"],
           "size": 15,
-          "text": "Word Count by Day"
+          "text": titleData["graph_title"]
         }
         ],
         "dataProvider": graphData
